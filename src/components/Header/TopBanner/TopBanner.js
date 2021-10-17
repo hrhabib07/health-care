@@ -7,17 +7,17 @@ import './TopBanner.css'
 const TopBanner = () => {
     return (
         <div className="container top-banner-container">
-            <div>
+            <div >
                 <img src={img} alt="" />
             </div>
-            <div>
+            <div className="hidden-mobile">
                 <h2>
                 <FontAwesomeIcon icon={faPhoneVolume} /> 
                     +(880) 123-4567</h2>
             
                 <small>For a Consultation Call</small>
             </div>
-            <div>
+            <div className="hidden-mobile">
             <h2>
                 <FontAwesomeIcon icon={faSearchLocation} />
                 Our Clinic</h2>

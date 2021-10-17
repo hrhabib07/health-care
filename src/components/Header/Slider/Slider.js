@@ -15,7 +15,7 @@ const Slider = () => {
       alt="First slide"
     />
     <Carousel.Caption className="carousel-caption">
-      <div>
+      <div className="hidden-mobile">
       <h1>We Are Excellence <br />
       In Gastroenterology 
       </h1>
@@ -31,7 +31,7 @@ const Slider = () => {
       alt="Second slide"
     />
 
-    <Carousel.Caption>
+    <Carousel.Caption  className="carousel-caption hidden-mobile">
     <div>
       <h1>Expert Specialist In  <br />
       Gastroenterology 
@@ -48,7 +48,7 @@ const Slider = () => {
       alt="Third slide"
     />
 
-    <Carousel.Caption>
+    <Carousel.Caption  className="carousel-caption hidden-mobile">
     <div>
       <h1>Special Care <br />
       For All Disease
