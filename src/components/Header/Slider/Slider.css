@@ -1,0 +1,13 @@
+.carousel-caption{
+        top: 30%;
+        left: 20%;
+        bottom: auto;
+        right: auto;  
+        color: black;
+}
+.btn-regular{
+    background-color: #8e517d;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
