@@ -21,7 +21,7 @@ const Slider = () => {
       In Gastroenterology 
       </h1>
       <p>A wide quality of diagnostic and therapy gastroenterology services.</p>
-      <Link to="/appointment">
+      <Link to="/expert">
       <button className="btn-regular">Make an Appointment</button>
       </Link>
       </div>
