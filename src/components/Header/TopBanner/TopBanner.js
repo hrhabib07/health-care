@@ -6,7 +6,8 @@ import './TopBanner.css'
 
 const TopBanner = () => {
     return (
-        <div className="container top-banner-container">
+        <div className="banner-bg">
+            <div className="container top-banner-container">
             <div >
                 <img src={img} alt="" />
             </div>
@@ -24,6 +25,7 @@ const TopBanner = () => {
                 <small>4958 Habibnogor Street, SubhaniGath, <br />
                      Sylhet, Bangladesh.</small>
             </div>
+        </div>
         </div>
     );
 };

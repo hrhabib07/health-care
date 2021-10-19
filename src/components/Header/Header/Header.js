@@ -1,14 +1,12 @@
 import React from 'react';
 import Navigation from '../Navigation/Navigation';
-import Slider from '../Slider/Slider';
 import TopBanner from '../TopBanner/TopBanner';
 
 const Header = () => {
     return (
-        <div>
+        <div id="home" style={{ position: "sticky", top:"0", zIndex:2 }}>
             <TopBanner></TopBanner>
             <Navigation></Navigation>
-            <Slider></Slider>
         </div>
     );
 };

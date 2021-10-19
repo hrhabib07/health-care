@@ -1,16 +1,30 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 
 const Navigation = () => {
+    const {user, logOut} = useAuth()
     return (
         <>
         <Navbar bg="dark" variant="dark">
         <Container>
-        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-        <Nav className="me-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#features">Features</Nav.Link>
-        <Nav.Link href="#pricing">Pricing</Nav.Link>
+        <Nav className="mx-auto">
+        <Nav.Link as={Link} to="/home">Home</Nav.Link>
+        <Nav.Link as={Link} to="/expert">Expert</Nav.Link>
+        <Nav.Link as={Link} to="/appointment">Appointment</Nav.Link>
+        {
+            user.email && <>
+                <b style={{color:"white"}}>{user.displayName}</b>
+                <button onClick={logOut}>LogOut</button>
+            </>
+        }
+        {
+            user.email || <>
+                <Nav.Link as={Link} to="/login">Login</Nav.Link>  
+            <Nav.Link as={Link} to="/registration">Register</Nav.Link>
+            </>
+        }  
         </Nav>
         </Container>
         </Navbar> 

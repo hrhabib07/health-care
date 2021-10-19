@@ -4,6 +4,7 @@
         bottom: auto;
         right: auto;  
         color: black;
+        text-align: start;
 }
 .btn-regular{
     background-color: #8e517d;
