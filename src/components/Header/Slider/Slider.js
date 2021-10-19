@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import slider1 from '../../../images/slider/slider-1.jpg'
 import slider2 from '../../../images/slider/slider-2.jpg'
 import slider3 from '../../../images/slider/slider-3.jpg'
@@ -20,7 +21,9 @@ const Slider = () => {
       In Gastroenterology 
       </h1>
       <p>A wide quality of diagnostic and therapy gastroenterology services.</p>
+      <Link to="/appointment">
       <button className="btn-regular">Make an Appointment</button>
+      </Link>
       </div>
     </Carousel.Caption>
   </Carousel.Item>

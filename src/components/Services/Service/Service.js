@@ -2,10 +2,12 @@ import { faCalendarPlus, faCalendarTimes, faClock, faWallet } from '@fortawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Service.css'
 
 const Service = ({test}) => {
-    const {testName, img, testFees, reportDevivery} = test;
+    const {testName, img, testFees, reportDevivery, testId} = test;
+    const appID = `/appointment/${testId}`
     return (
         <div>
              <Col>
@@ -19,7 +21,9 @@ const Service = ({test}) => {
             <br />
             <><b><FontAwesomeIcon className="time-icon" icon={ faClock}/> {reportDevivery} hrs</b></>
             <br />
-            <button className="btn-regular my-3">Get a Schedule <FontAwesomeIcon className="regular-icon" icon={ faCalendarPlus}/> </button>
+            <Link to={appID}>
+            <button  className="btn-regular my-3">Show Details <FontAwesomeIcon className="regular-icon" icon={ faCalendarPlus}/> </button>
+            </Link>
           </Card.Text>
         </Card.Body>
       </Card>
