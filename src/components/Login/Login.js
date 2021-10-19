@@ -4,7 +4,7 @@ import useAuth from '../../Hooks/useAuth';
 import './Login.css'
 
 const Login = () => {
-    const {signInUsingGoogle} = useAuth();
+    const {signInUsingGoogle, signInUsingFacebook} = useAuth();
     return (
         <div>
 
@@ -42,12 +42,17 @@ const Login = () => {
               <hr class="my-4" />
               <div class="d-grid mb-2">
                 <button onClick={signInUsingGoogle} class="btn btn-google btn-login text-uppercase fw-bold">
-                  <i class="fab fa-google me-2"></i> Sign in with Google
+                  <i calssName="fab fa-google me-2"></i> Sign in with Google
+                </button>
+              </div>
+              <div class="d-grid mb-2">
+                <button onClick={signInUsingFacebook} class="btn btn-facebook btn-login text-uppercase fw-bold" >
+                  <i class="fab fa-facebook-f me-2"></i> Sign in with Facebook
                 </button>
               </div>
               <div class="d-grid">
-                <button class="btn btn-facebook btn-login text-uppercase fw-bold" type="submit">
-                  <i class="fab fa-facebook-f me-2"></i> Sign in with Facebook
+                <button onClick={signInUsingFacebook} class="btn btn-github btn-login text-uppercase fw-bold" >
+                <i class="fab fa-github me-2"></i> Sign in with GitHub
                 </button>
               </div>
             </>

@@ -1,9 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Register.css'
+import './Register.css';
+import {  createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import initializeAuthentication from '../../Firebase/firebase.init';
+ 
+
+initializeAuthentication();
+
 
 const Register = () => {
-    
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+
+  const handleRegistration = () =>{
+    console.log('registration will be added');
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, name, email, password)
+    .then(result=>{
+      const user = result.user;
+      console.log(user);
+    } )
+    .catch(error=>{
+      setError(error.message);
+    })
+  };
+    const handleNameChanged = e =>{
+      setName(e.target.value);
+  };
+    const handleEmailChanged = e =>{
+      setEmail(e.target.value);
+  };
+   
+      let password1;
+      let password2;
+      const handleNewPassword = e =>{
+        password1 = (e.target.value);
+      };
+      const handleRetypedPassword = e =>{
+        password2 = (e.target.value);
+        if(password1===password2){
+          setPassword(password1)
+        } else{
+          setError("Something is wrong please check again ");
+        }
+      };
+  
+
     return (
         <div class="vh-100" style={{backgroundColor: "#eee"}}>
   <div class="container h-100">
@@ -21,7 +66,7 @@ const Register = () => {
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="form3Example1c" class="form-control" placeholder="Your Name" />
+                      <input onBlur={handleNameChanged} type="text" id="form3Example1c" class="form-control" placeholder="Your Name" required />
                       
                     </div>
                   </div>
@@ -29,21 +74,22 @@ const Register = () => {
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="email" id="form3Example3c" class="form-control" placeholder="Your Email" />
+                      <input onBlur={handleEmailChanged} type="email" id="form3Example3c" class="form-control" placeholder="Your Email" required />
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="password" id="form3Example4c" class="form-control"  placeholder="Password"/>
+                      <input required onBlur={handleNewPassword} type="password" id="form3Example4c" class="form-control"  placeholder="Password"/>
                    </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="password" id="form3Example4cd" class="form-control" placeholder="Repeat your password"/>
+                      <input onBlur={handleRetypedPassword} type="password" id="form3Example4cd" class="form-control" placeholder="Repeat your password"/>
+                      <span className="text-danger">{error}</span>
                     </div>
                   </div>
 
@@ -65,7 +111,7 @@ const Register = () => {
                     </p>
                     </div>
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="button" class="btn btn-primary btn-lg">Register</button>
+                    <button type="button" onClick={handleRegistration} class="btn btn-primary btn-lg">Register</button>
                   </div>
 
                 </form>

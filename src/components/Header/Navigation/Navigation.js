@@ -15,8 +15,8 @@ const Navigation = () => {
         <Nav.Link as={Link} to="/appointment">Appointment</Nav.Link>
         {
             user.email && <>
-                <b style={{color:"white"}}>{user.displayName}</b>
-                <button onClick={logOut}>LogOut</button>
+                <b style={{color:"white", margin:"10px"}}>{user.displayName}</b>
+                <button className="btn-regular" onClick={logOut}>LogOut</button>
             </>
         }
         {
