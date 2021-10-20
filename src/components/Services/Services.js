@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Row } from 'react-bootstrap';
 import useData from '../../Hooks/useData';
 import Service from './Service/Service';
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 const Services = () => {
     const {tests} = useData();
-    console.log(tests); 
+    useEffect(()=>{
+        AOS.init({
+            offset:100,
+            duration:2000,
+        easing: 'ease'});
+    },[])
     return (
         <div>
 
             <div className="container">
-            <div className="my-3 py-5">
+            <div className="my-3 py-5" data-aos="zoom-in-up">
             <h2>Conditions We Treat</h2>
             <p>We treat every type of digestive disorders.</p>
             </div>

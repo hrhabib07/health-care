@@ -1,22 +1,30 @@
 import { faUserMd } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './Doctor.css'
+
+import './Doctor.css';
+import 'aos/dist/aos.css';
+import Aos from 'aos';
 const Doctor = () => {
     const imgUrl = `https://image.freepik.com/free-photo/doctor-with-his-arms-crossed-white-background_1368-5790.jpg`;
+    useEffect(()=>{
+        Aos.init({
+            duration:2000
+        })
+    },[])
     return (
-        <div className="doctor-section-container">
+        <div className="doctor-section-container" data-aos="fade-up">
            <div className="container py-3 my-5">
-            <div className="container my-3">
+            <div className="container my-3" data-aos="fade-out">
                 <h2>Welcome to Gastroenterology Clinic</h2>
                 <h6>We can arrange procedures such as endoscopies, colonoscopies, and gastrointestinal treatments at some of the top hospitals in the india. Wherever you are being treated, we aim to make your visit as simple and convenient as we can.</h6>
             </div>
             <div className="row my-3">
-                <div className="col-sm-12 col-md-6   col-lg-6  container my-3">
+                <div className="col-sm-12 col-md-6   col-lg-6  container my-3"  data-aos="fade-up-right">
                     <img src={imgUrl} className="w-75 doctor-profile" alt=""  />
                 </div>
-                <div className="col-sm-12 col-md-6 col-lg-6  container my-auto py-5 doctor-details">
+                <div className="col-sm-12 col-md-6 col-lg-6  container my-auto py-5 doctor-details"  data-aos="fade-up-left">
                     <div>
                         <h2>Dr. Edward Johnston</h2>
                         <h5>GASTROENTEROLOGY & BIOPHOTONICS</h5>

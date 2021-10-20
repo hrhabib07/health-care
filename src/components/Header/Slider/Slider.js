@@ -40,7 +40,9 @@ const Slider = () => {
       Gastroenterology 
       </h1>
       <p>Our doctors are all renowned specialist in gastrointestinal diseases. </p>
+      <Link to="/expert">
       <button className="btn-regular">Make an Appointment</button>
+      </Link>
       </div>
     </Carousel.Caption>
   </Carousel.Item>
@@ -57,7 +59,9 @@ const Slider = () => {
       For All Disease
       </h1>
       <p>A wide quality service of all health related issues.</p>
+      <Link to="/expert">
       <button className="btn-regular">Make an Appointment</button>
+      </Link>
       </div>
     </Carousel.Caption>
   </Carousel.Item>

@@ -1,15 +1,26 @@
 import { faCalendarPlus, faCalendarTimes, faClock, faWallet } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import Aos from 'aos';
+import React, { useEffect } from 'react';
 import { Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './Service.css'
+import './Service.css';
+import 'aos/dist/aos.css'
 
 const Service = ({test}) => {
     const {testName, img, testFees, reportDevivery, testId} = test;
-    const appID = `/appointment/${testId}`
+    const appID = `/appointment/${testId}`;
+  useEffect(()=>{
+    Aos.init({
+      duration:2000,
+      useClassNames: true,
+  initClassName: false,
+  animatedClassName: 'animated',
+    })
+  },[])
     return (
-        <div>
+        <div  data-aos="zoom-in-up"
+        >
              <Col>
       <Card className="card-container">
         <Card.Img variant="top" src={img} className="card-image" />
