@@ -1,11 +1,9 @@
 .card-image{
     width: 90%;
     margin: 5% auto;
-    border-radius: 30% 70% 55% 45% / 30% 34% 66% 70% ;
     border: 2px solid rgb(137, 209, 233);
 }
 .card-image:hover{
-    border-radius: 68% 32% 64% 36% / 33% 50% 50% 67%  ;
     border: 2px solid rgb(79, 183, 218);
 }
 .card-container{

@@ -11,10 +11,11 @@ const TopBanner = () => {
             <div >
                 <img src={img} alt="" />
             </div>
-            <div className="hidden-mobile">
+            <div style={{display:'flex'}}>
+            <div className="mx-3">
                 <h2>
                 <FontAwesomeIcon icon={faPhoneVolume} /> 
-                    +(880) 123-4567</h2>
+                    <span style={{display:'inline'}}>+1234567</span></h2>
             
                 <small>For a Consultation Call</small>
             </div>
@@ -22,8 +23,9 @@ const TopBanner = () => {
             <h2>
                 <FontAwesomeIcon icon={faSearchLocation} />
                 Our Clinic</h2>
-                <small>4958 Habibnogor Street, SubhaniGath, <br />
+                <small>SubhaniGath,
                      Sylhet, Bangladesh.</small>
+            </div>
             </div>
         </div>
         </div>
