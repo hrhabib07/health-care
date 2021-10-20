@@ -5,7 +5,7 @@ import useAuth from '../../Hooks/useAuth';
 import './Login.css'
 
 const Login = () => {
-    const {signInUsingGoogle, signInUsingFacebook, signInUsingGithub} = useAuth(); 
+    const {signInUsingGoogle, signInUsingFacebook, } = useAuth(); 
     const location = useLocation();
     console.log('came From', location.state?.from);
     useEffect(()=>{
@@ -52,7 +52,7 @@ const Login = () => {
      data-aos-anchor="#example-anchor"
      data-aos-offset="800"
      data-aos-duration="1000">
-                    <p>Already Signed up? 
+                    <p>New user? 
                         <Link to="registration">Register</Link>
                     </p>
                     </div>
